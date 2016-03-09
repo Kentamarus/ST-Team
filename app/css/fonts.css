@@ -1,0 +1,55 @@
+@font-face {
+    font-family: LatoRegular;
+	src: url("../fonts/LatoRegular.eot");
+	src: url("../fonts/LatoRegular.svg") format('svg'),
+		url("../fonts/LatoRegular.ttf") format('truetype'),		
+		url("../fonts/LatoRegular.otf") format("opentype"),
+		url("../fonts/LatoRegular.woff") format("woff");
+   }
+
+@font-face {
+    font-family: LatoLight;
+	src: url("../fonts/LatoLight.eot");
+	src: url("../fonts/LatoLight.svg") format('svg'),
+		url("../fonts/LatoLight.ttf") format('truetype'),		
+		url("../fonts/LatoLight.otf") format("opentype"),
+		url("../fonts/LatoLight.woff") format("woff");
+   }
+@font-face {
+    font-family: LatoBold;
+	src: url("../fonts/LatoBold.eot");
+	src: url("../fonts/LatoBold.svg") format('svg'),
+		url("../fonts/LatoBold.ttf") format('truetype'),		
+		url("../fonts/LatoBold.otf") format("opentype"),
+		url("../fonts/LatoBold.woff") format("woff");
+   }
+@font-face {
+    font-family: IntroRegular;
+	src: url("../fonts/IntroRegular.eot");
+	src: url("../fonts/IntroRegular.svg") format('svg'),
+		url("../fonts/IntroRegular.ttf") format('truetype'),		
+		url("../fonts/IntroRegular.otf") format("opentype"),
+		url("../fonts/IntroRegular.woff") format("woff");
+   }
+@font-face {
+    font-family: IntroInline;
+	src: url("../fonts/IntroInline.eot");
+	src: url("../fonts/IntroInline.svg") format('svg'),
+		url("../fonts/IntroInline.ttf") format('truetype'),		
+		url("../fonts/IntroInline.otf") format("opentype"),
+		url("../fonts/IntroInline.woff") format("woff");
+   }
+
+@font-face{
+    font-family:GothamPro-Black;
+    src:url("../fonts/GothamPro-Black.eot");src:url("../fonts/GothamPro-Black.svg") format('svg'),
+url("../fonts/GothamPro-Black.ttf") format('truetype'),
+url("../fonts/GothamPro-Black.otf") format("opentype"),
+url("../fonts/GothamPro-Black.woff") format("woff");}
+
+@font-face{
+    font-family:GothamPro-Light;
+src:url("../fonts/GothamPro-Light.eot");src:url("../fonts/GothamPro-Light.svg") format('svg'),
+url("../fonts/GothamPro-Light.ttf") format('truetype'),
+url("../fonts/GothamPro-Light.otf") format("opentype"),
+url("../fonts/GothamPro-Light.woff") format("woff");}

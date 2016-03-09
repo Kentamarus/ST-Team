@@ -1,0 +1,34 @@
+
+@media (min-width: 100px){
+    .container {
+        width:980px!important;
+        position: relative;
+    }
+}
+
+
+@media (max-width: 1024px){
+    
+}
+
+@media (max-width: 768px){
+    
+    .adventure {
+        min-height: 876px;
+        background-size: 1550px;
+    }
+    
+}
+@media (max-width: 640px){
+    
+}
+
+@media (max-width: 500px){
+    
+}
+
+@media (max-width: 400px){
+    
+}
+
+
