@@ -97,7 +97,7 @@ gulp.task('css-build', function () {
   return gulp.src(path.create.tmp)    
         //.pipe(prefixer()) //Добавим вендорные префиксы
         .pipe(cssmin()) //Сожмем        
-        .pipe(gulp.dest('app/style'))
+        .pipe(gulp.dest('app/style/'))
         .pipe(gulp.dest(path.production.style))
         .pipe(reload({stream: true}));  
 });
@@ -128,11 +128,17 @@ gulp.task('build', [
     'image:build',
     'uploads:build',
     'js:build',
-    'fonts:build'
+    'fonts:build',    
+    'libs:build'
 ]);
 
-gulp.task('css:build',function(){
-    gulpSequence('css-concat','css-buld');
+gulp.task('build-clean', function() {
+    // Return the Promise from del()
+    return del([BUILD_DIRECTORY]); //   This is the key here, to make sure asynchronous tasks are done!
+});
+
+gulp.task('css:build',function(callback){
+    gulpSequence('css-concat','css-build', callback);
 })
 
 gulp.task('webserver', function () {
@@ -160,6 +166,6 @@ gulp.task('watch', function(){
     });   
 });
 
-gulp.task('default', ['build', 'webserver', 'watch', 'libs:build', 'css:build' ]);
+gulp.task('default', ['build', 'webserver', 'watch', 'css:build']);
     
 console.log("Gulpfile is updated");

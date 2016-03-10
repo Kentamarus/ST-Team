@@ -10,7 +10,7 @@ body{
     display: block;    
 }
 body {
-    background:#f5f5f5;
+  background:#f5f5f5;
 }
 
 a:link,
@@ -59,7 +59,7 @@ nav{
     width:116px;   
     background: url(../images/up-top.png) no-repeat;    
     opacity: 1;    
-}
+} 
 .cd-top:hover{
     background-position: left bottom;
 }
