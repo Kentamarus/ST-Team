@@ -9,7 +9,12 @@ var gulp = require('gulp'),
     browserSync = require("browser-sync"),   
     gutil = require('gulp-util'),
     concatCss = require('gulp-concat-css');
-    reload = browserSync.reload;
+    reload = browserSync.reload,
+    gulpSequence = require('gulp-sequence');
+
+var concatConfig = {
+    file: 'bundle.css'
+}
 
 var path = {
     production: { //Тут мы укажем куда складывать готовые после сборки файлы
@@ -26,11 +31,12 @@ var path = {
         html: 'app/*.html',
         js: 'app/scripts/scripts.js',//В стилях и скриптах нам понадобятся только main файлы        
         css: 'app/css/**/*.css',
-        style: 'app/style/',
+        style: 'app/style/**/*.css',
         libs: 'app/libraries/**/*.*',
         img: 'app/images/**/*.*',      
         uploads: 'app/uploads/**/*.*',      
-        fonts: 'app/fonts/**/*.*'     
+        fonts: 'app/fonts/**/*.*',
+        tmp: 'app/tmp/**/*.css'
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: 'app/**/*.html',
@@ -42,7 +48,7 @@ var path = {
         libs: 'app/libraries/**/*.*',
         fonts: 'app/fonts/**/*.*'      
     },
-    clean: './production'
+    clean: './.production'
 };
 
 var config = {
@@ -62,18 +68,6 @@ gulp.task('html:build', function () {
         .pipe(reload({stream: true})); //И перезагрузим наш сервер для обновлений
 });
 
-//// SASS task
-//
-//gulp.task('style:build', function () {
-//    gulp.src(path.create.style) //Выберем наш main.scss       
-//        .pipe(sass()) //Скомпилируем
-//        .pipe(prefixer()) //Добавим вендорные префиксы
-//        .pipe(cssmin()) //Сожмем        
-//        .pipe(gulp.dest(path.production.css)) //И в build 
-//        .pipe(reload({stream: true}));     
-//});
-
-// js task
 
 gulp.task('js:build', function () {
     gulp.src(path.create.js) //Найдем наш main файл        
@@ -81,8 +75,6 @@ gulp.task('js:build', function () {
         .pipe(gulp.dest(path.production.js)) //Выплюнем готовый файл в production 
         .pipe(reload({stream: true}));     
 });
-
-// image task
 
 gulp.task('image:build', function () {
     gulp.src(path.create.img) //Выберем наши картинки
@@ -95,20 +87,19 @@ gulp.task('image:build', function () {
         .pipe(gulp.dest(path.production.img)) //И бросим в production       
 });
 
-//gulp.task('concat-css', function () {
-//  return gulp.src(path.create.css)
-//    .pipe(prefixer()) //Добавим вендорные префиксы    
-//    .pipe(concatCss("bundle.css"))
-//    .pipe(gulp.dest(path.create.style))
-//    .pipe(gulp.dest(path.production.style));
-//    //.pipe(reload({stream: true}));     
-//});
+gulp.task('css-concat', function () {  
+    return gulp.src(path.create.css)
+        .pipe(concatCss(concatConfig.file))        
+        .pipe(gulp.dest('app/tmp'))
+});
 
-gulp.task('concat-css', function () {
-  return gulp.src(path.create.css)
-    .pipe(concatCss("bundle.css"))
-    .pipe(gulp.dest(path.create.style))
-    .pipe(gulp.dest(path.production.style));
+gulp.task('css-build', function () {
+  return gulp.src(path.create.tmp)    
+        //.pipe(prefixer()) //Добавим вендорные префиксы
+        .pipe(cssmin()) //Сожмем        
+        .pipe(gulp.dest('app/style'))
+        .pipe(gulp.dest(path.production.style))
+        .pipe(reload({stream: true}));  
 });
 
 gulp.task('uploads:build', function () {
@@ -122,28 +113,14 @@ gulp.task('uploads:build', function () {
         .pipe(gulp.dest(path.production.uploads)) //И бросим в production       
 });
 
-// libs task
-
 gulp.task('libs:build', function () {
     gulp.src(path.create.libs) //Выберем наши библиотеки        
         .pipe(gulp.dest(path.production.libs)) //И бросим в production 
 });
 
-// fonts
-
 gulp.task('fonts:build', function () {
     gulp.src(path.create.fonts) //Выберем наши шрифты        
         .pipe(gulp.dest(path.production.fonts)) //И бросим в production 
-});
-
-// allcss minified
-
-gulp.task('css:build', function () {
-    gulp.src(path.create.css) //Выберем все файлы css   
-        .pipe(prefixer()) //Добавим вендорные префиксы
-        .pipe(cssmin()) //Сожмем        
-        .pipe(gulp.dest(path.production.css)) //И в production 
-        .pipe(reload({stream: true}));     
 });
 
 gulp.task('build', [
@@ -151,25 +128,21 @@ gulp.task('build', [
     'image:build',
     'uploads:build',
     'js:build',
-    'fonts:build',
-    'css:build'   
+    'fonts:build'
 ]);
 
-// server
+gulp.task('css:build',function(){
+    gulpSequence('css-concat','css-buld');
+})
 
 gulp.task('webserver', function () {
     browserSync(config);
 });
 
-// watch
-
 gulp.task('watch', function(){  
     watch([path.watch.html], function(event, cb) {
         gulp.start('html:build');
     });   
-//    watch([path.watch.style], function(event, cb) {
-//        gulp.start('style:build');
-//    });
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
     });
@@ -187,6 +160,6 @@ gulp.task('watch', function(){
     });   
 });
 
-gulp.task('default', ['build', 'webserver', 'watch', 'libs:build']);
-
+gulp.task('default', ['build', 'webserver', 'watch', 'libs:build', 'css:build' ]);
+    
 console.log("Gulpfile is updated");
