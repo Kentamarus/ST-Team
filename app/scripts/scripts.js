@@ -30,6 +30,11 @@ var Site = new function () {
             );
         });    
         
+         $("a[data-rel='m_PageScroll2id']").mPageScroll2id({
+            scrollSpeed: 500,
+            offset: 100
+        });
+        
          //$.mask.definitions['~']='[+-]';    
          $('input[type=tel]').mask("+7(999) 999-9999");
                

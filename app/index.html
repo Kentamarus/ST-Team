@@ -10,7 +10,9 @@
     
         <link rel="icon" href="images/favicon.png">    
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/media.css">    
+        <link rel="stylesheet" type="text/css" href="css/media.css">
+        
+<!--        <link rel="stylesheet" type="text/css" href="style/bundle.css">            -->
     </head>
 <body>
     
@@ -23,19 +25,19 @@
                         <div class="block-before overfow-hidden">                                                                                                   
                                 <div class="title">
                                     <p>
-                                        <span class="uppercase fontBold btn-block">ВЫ МОЖЕТЕ ЗАКАЗАТЬ</span>
-                                        <i class="text"></i>
+                                        <span class="uppercase fontBold btn-block">Заполните форму</span>                                        
+                                        <i>чтобы заказать обратный звонок</i>
                                     </p>
                                 </div>                               
                                 <form class="call-back-form">
                                     <input type="hidden" class="subject" name="subject">
                                     <ul class="ul-form">
                                         <li>
-                                            <input type="text" class="people text-empty" required="" id="firstName10" name="firstName10" placeholder="Введите имя">
+                                            <input type="text" class="people text-entry ico ico-arrow" required="" name="firstName" placeholder="Введите имя">
                                         </li>
                                         <li class="relative">          
 											<i class="mask"></i>										
-                                            <input type="tel" class="phone text-empty" required="" id="phone2" name="phone2" placeholder="Введите телефон">
+                                            <input type="tel" class="phone text-entry ico ico-arrow" required="" name="phone" placeholder="Введите телефон">
                                         </li>
                                     </ul>
                                     <button type="submit" data-successful class="btn btn-primary uppercase">Заказать<i></i></button>    
@@ -87,7 +89,7 @@
                        <i>Агенство лидогенерации</i>
                    </a>
                    <div class="will-call">                       
-                       <p class="ico-phone ico"><a href="#callAnswer" data-effect="mfp-move-horizontal"  class="call underline">Заказать обратный звонок</a></p>
+                       <p class="ico-phone ico"><a href="#callAnswer" data-effect="mfp-move-horizontal"  class="call">Заказать обратный звонок</a></p>
                        <p class="ico-clock ico">пн-пт. 9:00-18:00</p>
                    </div>
                </div>
@@ -171,6 +173,8 @@
                         <p>Создаем мощный поток клиентов в Ваш бизнес</p>
                     </div>
                 </div>
+                
+                    <div class="signature uppercase">И все это АБСОЛЮТНО <span>БЕСПЛАТНО!!!</span></div>
                 </div>
             </div>
         </section>
@@ -180,6 +184,7 @@
                 <div class="container content">
                     <h4 class="title uppercase">Узнайте стоимость клиента в Вашем бизнесе</h4>
 
+<!--
                        <form class="clearfix subscription">
                             <div class="col-sm-4 item-col">
                                 <input type="text" name="phone" class="text-entry ico ico-arrow" placeholder="Ваше имя">
@@ -191,8 +196,12 @@
                                 <input type="submit" value="Узнать стоимость" class="btn btn-primary">
                             </div>                                   
                         </form>                    
+-->
+                        <div class="block-btn">                            
+                                <a href="#formMain" data-rel="m_PageScroll2id" class="btn btn-primary">Узнать стоимость</a>
+                        </div>
 
-                        <div class="sign"><p>Ваши данные не будут переданы третьим лицам</p></div>
+<!--                        <div class="sign"><p>Ваши данные не будут переданы третьим лицам</p></div>-->
                 </div>
             </section>
 
@@ -247,7 +256,7 @@
                 <div class="title dark title-line">В этом месяце мы готовы взять всего 5 проектов!</div>
                 <div class="title-small">Заполните анкету и мы свяжемся с Вами в течение 1 часа!</div>
                 
-                <fieldset class="grid">
+                <fieldset id="formMain" class="grid">
                     <label class="title-line">УЗНАЙТЕ СТОИМОСТЬ КЛИЕНТА В ВАШЕЙ НИШЕ!</label>
 <!--                  .clearfix>.col-sm-6.item-col$*2>ul>li*3>input.[type="text" placeholder=""].text-entry.ico.ico-arrow-->
                    <div class="clearfix">
@@ -279,13 +288,13 @@
                                </a>
                            </div>
                            <address>
-                               <p>© 2012. ST-team – Агенство лидогенерации полного цикла</p>
+                               <p>© 2012. ST-LEAD – Агенство лидогенерации</p>
                                <p>Соглашение об обработке персональных данных</p>
                            </address>                           
                        </div>
                        <div class="col-sm-4">
                            <div class="will-call">                       
-                               <p class="ico-phone ico"><a href="#callAnswer" data-effect="mfp-move-horizontal"  class="call underline">Заказать обратный звонок</a></p>
+                               <p class="ico-phone ico"><a href="#callAnswer" data-effect="mfp-move-horizontal"  class="call">Заказать обратный звонок</a></p>
                                <p class="ico-clock ico">пн-пт. 9:00-18:00</p>
                                <p class="ico-email ico"><a href="mailto:info@st-lead.ru" class="a-none">info@st-lead.ru</a></p>                               
                            </div>
@@ -304,6 +313,7 @@
         <script src="libraries/jquery.magnific-popup.min.js"></script>
         <script src="libraries/bootstrap.js"></script>
         <script src="libraries/gistfile1.js"></script>
+        <script src="libraries/jquery.malihu.PageScroll2id.min.js"></script>
         <script src="libraries/jquery.validate.min.js"></script>        
         
         <script src="scripts/scripts.js"></script>                    

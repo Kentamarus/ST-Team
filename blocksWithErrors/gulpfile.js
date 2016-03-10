@@ -8,25 +8,23 @@ var gulp = require('gulp'),
     cssmin = require('gulp-minify-css'),
     browserSync = require("browser-sync"),   
     gutil = require('gulp-util'),
+    reload = browserSync.reload,
     concatCss = require('gulp-concat-css');
-    reload = browserSync.reload;
 
 var path = {
     production: { //Тут мы укажем куда складывать готовые после сборки файлы
         html: '.production/',
         js: '.production/scripts/',
-        css: '.production/css/',
+        style: '.production/style/',
         img: '.production/images/',
         uploads: '.production/uploads/',
-        style: '.production/style/',
         libs: '.production/libraries/',
         fonts: '.production/fonts/'        
     },
     create: { //Пути откуда брать исходники
         html: 'app/*.html',
         js: 'app/scripts/scripts.js',//В стилях и скриптах нам понадобятся только main файлы        
-        css: 'app/css/**/*.css',
-        style: 'app/style/',
+        style: 'app/style/*.css',
         libs: 'app/libraries/**/*.*',
         img: 'app/images/**/*.*',      
         uploads: 'app/uploads/**/*.*',      
@@ -35,8 +33,8 @@ var path = {
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: 'app/**/*.html',
         js: 'app/js/**/*.js',
-        css: 'app/css/**/*.css',
-        style: 'app/style/**/*.css',
+        style: 'app/style/*.css',
+        cssMin: 'app/style/*.css',
         img: 'app/images/**/*.*',
         uploads: 'app/uploads/**/*.*',      
         libs: 'app/libraries/**/*.*',
@@ -82,8 +80,6 @@ gulp.task('js:build', function () {
         .pipe(reload({stream: true}));     
 });
 
-// image task
-
 gulp.task('image:build', function () {
     gulp.src(path.create.img) //Выберем наши картинки
         .pipe(imagemin({ //Сожмем их
@@ -93,22 +89,6 @@ gulp.task('image:build', function () {
             interlaced: true
         }))
         .pipe(gulp.dest(path.production.img)) //И бросим в production       
-});
-
-//gulp.task('concat-css', function () {
-//  return gulp.src(path.create.css)
-//    .pipe(prefixer()) //Добавим вендорные префиксы    
-//    .pipe(concatCss("bundle.css"))
-//    .pipe(gulp.dest(path.create.style))
-//    .pipe(gulp.dest(path.production.style));
-//    //.pipe(reload({stream: true}));     
-//});
-
-gulp.task('concat-css', function () {
-  return gulp.src(path.create.css)
-    .pipe(concatCss("bundle.css"))
-    .pipe(gulp.dest(path.create.style))
-    .pipe(gulp.dest(path.production.style));
 });
 
 gulp.task('uploads:build', function () {
@@ -138,13 +118,13 @@ gulp.task('fonts:build', function () {
 
 // allcss minified
 
-gulp.task('css:build', function () {
-    gulp.src(path.create.css) //Выберем все файлы css   
-        .pipe(prefixer()) //Добавим вендорные префиксы
-        .pipe(cssmin()) //Сожмем        
-        .pipe(gulp.dest(path.production.css)) //И в production 
-        .pipe(reload({stream: true}));     
-});
+//gulp.task('css:build', function () {
+//    gulp.src(path.create.css) //Выберем все файлы css   
+//        .pipe(prefixer()) //Добавим вендорные префиксы
+//        .pipe(cssmin()) //Сожмем        
+//        .pipe(gulp.dest(path.production.css)) //И в production 
+//        .pipe(reload({stream: true}));     
+//});
 
 gulp.task('build', [
     'html:build',     
@@ -152,11 +132,26 @@ gulp.task('build', [
     'uploads:build',
     'js:build',
     'fonts:build',
-    'css:build'   
+    'concat-css:build'      
 ]);
 
-// server
+gulp.task('concat-css:build', function () {
+  return gulp.src('app/css/**/*.css')
+    .pipe(prefixer()) //Добавим вендорные префиксы    
+    .pipe(concatCss("bundle.css"))
+    .pipe(gulp.dest('app/style/'))
+    .pipe(gulp.dest(path.production.style))    
+    .pipe(reload({stream: true}));
+});
 
+gulp.task('css-min:build', function () {
+  return gulp.src('app/style/**/*.css')
+    .pipe(cssmin()) //Сожмем            
+    .pipe(gulp.dest(path.create.style))
+    //.pipe(reload({stream: true}));
+});
+
+// server
 gulp.task('webserver', function () {
     browserSync(config);
 });
@@ -182,11 +177,12 @@ gulp.task('watch', function(){
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
     });
-    watch([path.watch.css], function(event, cb) {
-        gulp.start('css:build');
-    });   
+    watch([path.watch.cssMin], function(event, cb) {
+        gulp.start('css-min:build');
+    });
+    watch([path.watch.style], function(event, cb) {
+        gulp.start('concat-css:build');
+    });
 });
 
 gulp.task('default', ['build', 'webserver', 'watch', 'libs:build']);
-
-console.log("Gulpfile is updated");
