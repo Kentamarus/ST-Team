@@ -1,9 +1,3 @@
-@import "normalize.css";
-@import "bootstrap.min.css";
-@import "magnific-popup.css";
-@import "fonts.css";
-@import "template.css";
-
 html,
 body{
     height: 100%;
@@ -235,11 +229,12 @@ header .list li{
     display: block;
 }
 
-.working .image{position: relative;}
 .working .image{
+    position: relative;
     display: block;
     width: 220px;
     height: 220px;
+    margin-bottom: 15px;
     background:url('../images/big-ico-back-full.png') no-repeat; 
 }
 .working .title{
@@ -523,6 +518,8 @@ header .list li{
 .image-advent{
     min-height: 514px;
     background:url('../images/advent.png') no-repeat center top; 
+    position: relative;
+    margin: 0 95px;
 }
 
 .title-line{
@@ -604,7 +601,7 @@ address p {
 }
 
 .how-section .base{
-    height: 690px;
+    min-height: 690px;
 }
 
 .signature span{
@@ -719,3 +716,5 @@ address p {
 button.mfp-close:hover {
     background-position: left top;
 }
+
+

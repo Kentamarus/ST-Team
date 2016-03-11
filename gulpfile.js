@@ -8,7 +8,7 @@ var gulp = require('gulp'),
     cssmin = require('gulp-minify-css'),
     browserSync = require("browser-sync"),   
     gutil = require('gulp-util'),
-    concatCss = require('gulp-concat-css');
+    concat = require('gulp-concat');
     reload = browserSync.reload,
     gulpSequence = require('gulp-sequence');
 
@@ -88,8 +88,17 @@ gulp.task('image:build', function () {
 });
 
 gulp.task('css-concat', function () {  
-    return gulp.src(path.create.css)
-        .pipe(concatCss(concatConfig.file))        
+    var files = [
+            './app/css/normalize.css',
+            './app/css/bootstrap.min.css',
+            './app/css/magnific-popup.css',
+            './app/css/fonts.css',
+            './app/css/template.css',
+            './app/css/style.css',
+            './app/css/media.css'];
+    
+    return gulp.src([files[0],files[1], files[2], files[3], files[4], files[5], files[6]])
+        .pipe(concat(concatConfig.file))        
         .pipe(gulp.dest('app/tmp'))
 });
 

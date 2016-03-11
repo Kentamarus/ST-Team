@@ -1,6 +1,8 @@
 
 @media (max-width: 1024px){
-    
+    .image-advent{ margin: 0;}    
+    .how-section .item.item4,
+    .how-section .item.item1{ left: 10px;}
 }
 
 @media (max-width: 769px){
@@ -16,13 +18,213 @@
     .how-section .back:before{
         display: none;
     }
+    
+    .how-section .item.item5,
+    .how-section .item.item2 {
+        left: 240px;
+    }
+    .how-section .item.item6,
+    .how-section .item.item3 {
+        right: 0;
+    }
+    .how-section .item p {
+        font-size: 20px;
+        padding: 0 20px!important;
+    }
+    .not-working .item-col{ width: 50%; }
+    .not-working .item-col:last-child{ width: 100%; }
+        
+    .not-working .item p{ margin-bottom: 25px;}
+    .image-arrows:after{
+            background-size: 734px;
+    }
+    .adventure .item1 {
+        left: 0;
+        top: 5px;
+    }
+    .adventure .item2 {
+        right: 0;
+        top: 5px;
+    }
+    .adventure .item5 {
+        left: 0;
+        top: 385px;
+    }
+    .adventure .item4 {
+        left: 330px;
+        top: 522px;
+    }
+    .image-arrows:after{
+        height: 515px;
+    }
+    .adventure .item3 {
+        right: 14px;
+        top: 384px;
+    }
+    .adventure {
+        min-height: 775px;
+    }
+    .section-bottom{ background-position: center bottom; min-height: 0;}
+    .section-bottom ul{ padding: 0; margin: 0; }
+    .section-bottom .title{ margin-bottom: 0;}
+    footer {
+        margin-top: 30px;
+    }
 }
 @media (max-width: 640px){
+    .working .item-col{ width: 50%; }
+    .working .item-col:last-child{ width: 100%; }
     
+    .how-section .item {
+        position: relative;
+        top: inherit!important;
+        left: inherit!important;
+        right: inherit!important;        
+        width: 100%;
+        max-width: 100%;
+    }
+    .how-section .title{ margin-bottom: 20px;}
+    .how-section .item .inner {
+        margin-bottom: 15px;
+    }
+    .signature{ margin-bottom: 15px;}
+    
+    .how-section:before{ display: none;}
+    .not-working .item p{ padding: 0!important; min-height: 0; padding-bottom: 30px;}
+    
+    .image-advent {
+        background-size: 400px;
+    }
+    .adventure {
+        background-size: auto;
+    }
+    .image-arrows:after{
+        background-size: 600px!important;
+        top: 210px;
+    }    
+    .adventure .item1 {
+        left: 0;
+        top: -10px;
+    }
+    .adventure .item2 {
+        right: 0;
+        top: -10px;
+    }
+    .adventure .item3 {
+        right: 0px;
+        top: 300px;
+    }
+    .adventure .item4 {
+        left: 265px;
+        top: 410px;
+    }
+    .adventure .item5 {
+        left: 0;
+        top: 300px;
+    }
+    .adventure .item, .grid label, .title-small{
+        font-size: 18px;
+    }
+    .will-call p {
+        padding-left: 37px;
+        margin: 0 0 2px 0;
+    }
+    footer address {
+        margin: 0;
+        text-align: center;
+    }
+
+    footer  .navbar-brand {
+        width: 211px;
+        margin-top: 18px;
+        padding: 0;
+        margin: 0 auto;
+        float: none;
+        display: block;
+    }
+    .section-bottom .sign {
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+    
+    footer  .will-call {
+        float: none;
+        margin-top: 0;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 310px;
+    }
 }
 
 @media (max-width: 500px){
+     header .navbar-brand {
+        width: 211px;
+        padding: 0;
+        margin: 0 auto;
+        margin-top: 18px;
+        float: none;
+        display: block;
+    }
+     .will-call {
+        float: none;
+        margin-top: 0;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 310px;
+         margin-top: 25px;
+    }
+    header .title {
+        padding-top: 0;
+    }
+    header .list {
+        margin-top: 0;
+    }
+    header .list ul {
+        margin-bottom: 25px;
+        padding-left: 0;
+    }
+    header .list li {
+        white-space: normal;
+    }
+    header {
+        min-height: 600px;
+    }
+    .not-working .item-col,
+    .working .item-col {
+        width: 100%;
+    }
+    .image-arrows:after{ display: none;}
+    .image-advent{ min-height: 0; background: none;}
+    .adventure .item {
+        color: #565656;
+        display: block;
+        position: relative;
+        top: inherit!important;
+        left: inherit!important;
+        right: inherit!important;        
+        text-align: center;
+    }
+    .adventure{ min-height: 0; padding-bottom: 25px;}
     
+    .title.dark {
+        font-size: 28px;
+    }
+    .title-line {
+        line-height: 32px;
+    }
+    
+    .grid .block-btn {
+        max-width: 90%;     
+        margin-bottom: -20px;
+    }
+    
+    .section-bottom .title-small{ padding: 0 70px;}
+    .section-bottom .title{ margin-bottom: 15px;}
+    .grid label {
+        max-width: 80%;
+        padding: 0 45px;
+        line-height: 26px;
+    }
 }
 
 @media (max-width: 400px){
