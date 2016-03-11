@@ -1,3 +1,8 @@
+@media (min-width: 1200px){
+    .container {
+        width: 980px;
+    }
+}
 
 @media (max-width: 1024px){
     .image-advent{ margin: 0;}    
@@ -74,6 +79,13 @@
 @media (max-width: 640px){
     .working .item-col{ width: 50%; }
     .working .item-col:last-child{ width: 100%; }
+    
+    
+    .grid label {
+        max-width: 80%;
+        padding: 0 45px;
+        line-height: 26px;
+    }
     
     .how-section .item {
         position: relative;
@@ -219,12 +231,7 @@
     }
     
     .section-bottom .title-small{ padding: 0 70px;}
-    .section-bottom .title{ margin-bottom: 15px;}
-    .grid label {
-        max-width: 80%;
-        padding: 0 45px;
-        line-height: 26px;
-    }
+    .section-bottom .title{ margin-bottom: 15px;}    
 }
 
 @media (max-width: 400px){

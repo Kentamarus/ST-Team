@@ -1,9 +1,9 @@
 
-$(function(){
-    
+$(function(){    
     Browser.init();
     Site.Init();     
-
+    
+//    $(window).bind("resize", function(){ location.reload(); });
 });
 
 var Site = new function () {

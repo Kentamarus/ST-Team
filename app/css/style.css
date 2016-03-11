@@ -273,12 +273,21 @@ header .list li{
     z-index: 25;
 }
 
+.how-section .item.item1{ left: 0px; top: 45px;}
+.how-section .item.item2{ left: 350px; top: 45px;}
+.how-section .item.item3{ right: 25px; top: 45px;}
+.how-section .item.item4{ left: 0px; top: 370px;}
+.how-section .item.item5{ left: 350px; top: 370px;}
+.how-section .item.item6{ right: 25px; top: 370px;}
+
+/*
 .how-section .item.item1{ left: 0px; top: 166px;}
 .how-section .item.item2{ left: 350px; top: 166px;}
 .how-section .item.item3{ right: 25px; top: 166px;}
 .how-section .item.item4{ left: 0px; top: 485px;}
 .how-section .item.item5{ left: 350px; top: 485px;}
 .how-section .item.item6{ right: 25px; top: 485px;}
+*/
 
 .how-section .item.item2 p{ padding: 0 10px;}
 
@@ -519,7 +528,6 @@ header .list li{
     min-height: 514px;
     background:url('../images/advent.png') no-repeat center top; 
     position: relative;
-    margin: 0 95px;
 }
 
 .title-line{
@@ -542,7 +550,8 @@ header .list li{
 }
 
 .grid{
-    border: 8px solid #ffdf30;
+    border: 8px solid #ffdf30;    
+    padding: 0 70px;
     margin-top: 47px;
 }
 .grid label{
@@ -602,6 +611,7 @@ address p {
 
 .how-section .base{
     min-height: 690px;
+    position: relative;
 }
 
 .signature span{
@@ -718,3 +728,57 @@ button.mfp-close:hover {
 }
 
 
+.section-bottom ul{ padding: 0; margin: 0;}
+
+.mobile .price-section .block-btn{ margin: 20px 0;}
+.mobile .title{ font-size: 24px;}
+.mobile header .title{ font-size: 20px; margin: 25px 0; } 
+.mobile .signature{ font-size: 16px;}
+.mobile .price-section {
+    padding-top: 25px;
+    margin-bottom: 0;
+}
+.mobile .price-section .content { padding-bottom: 0px;}
+.mobile .section-bottom .title,
+.mobile .adventure .title{ font-size: 19px;}
+.mobile .title-line {
+    line-height: 20px;
+}
+.mobile .section-bottom .title-small {
+    padding: 0 30px;
+}
+.mobile .grid{ padding: 0;}
+.mobile .grid label {
+    padding: 0 5px;
+    margin-top: -19px;
+}
+.mobile .grid .block-btn {
+    max-width: 90%;
+    margin-bottom: -28px;
+    padding: 0 10px;
+}
+.mobile .section-bottom .sign {
+    padding: 0 45px;
+    margin-bottom: 70px;
+}
+.mobile address{ font-size: 15px;}
+.mobile .btn.btn-primary{ font-size: 19px;}
+
+
+
+.iPad .how-section .title {
+    margin-bottom: 0;
+}
+.iPad .how-section .item.item1,
+.iPad .how-section .item.item4 {
+    left: 0;
+}
+.iPad .how-section .item {
+    width: 255px;
+}
+.iPad .section-bottom .sign {
+    padding-top: 15px;
+    padding-bottom: 75px;
+}
+.iPad .grid{ padding: 0;}
+.iPad .grid .text-entry{ padding-left: 40px;}
