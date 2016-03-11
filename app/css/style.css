@@ -864,6 +864,8 @@ button.mfp-close:hover {
     text-transform: uppercase;
 }
 
+.firefox .call-answer .title span,
+.firefox .call-answer .title i,
 .firefox .sign, 
 .firefox .text-entry,
 .firefox .signature, address,
