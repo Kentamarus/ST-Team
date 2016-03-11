@@ -104,6 +104,8 @@ header{
     font-style: normal;
     line-height: 30px;
     color: white;
+    font-family: LatoRegular;
+    white-space: nowrap;
 }
 
 
@@ -199,6 +201,7 @@ header .list li{
 .btn.btn-primary:active,
 .btn.btn-primary:focus{border:none;outline:0;cursor:pointer;}
 .btn.btn-primary:active{top:3px; box-shadow:0 0 0 #809e1e;}
+
 .btn.btn-primary{
     max-width:344px;
     width: 100%;
@@ -258,7 +261,7 @@ header .list li{
     z-index: 20;
     background: url('../images/back-clouds.png') no-repeat center top;
 }
-.how-section .title{ margin-bottom: 60px;}
+.how-section .title{ margin:0 0  60px 0; }
 .how-section .item p{
     font-size: 22px;
     color: #565656;
@@ -417,9 +420,11 @@ header .list li{
     background-color: #fde7e7;
     
 }
-.text-entry::-webkit-input-placeholder{
-    color: #333333;
-}
+.text-entry::-webkit-input-placeholder{ color: #333333; font-size: 16px;}
+.text-entry::-moz-placeholder{ color: #333333; font-size: 16px;}
+.text-entry:-moz-placeholder{ color: #333333; font-size: 16px;}
+.text-entry:-ms-input-placeholder{ color: #333333; font-size: 16px;}
+
 .text-entry.error::-webkit-input-placeholder{
     color: #f24e22!important;
 }
@@ -591,7 +596,7 @@ header .list li{
 
 footer{ margin-top: 123px;}
 address{
-    font-size: 18px;
+        font-size: 18px;
     color: #bed6e4;
     font-family: LatoRegular;
     text-align: left;
@@ -600,6 +605,13 @@ address{
 address p {
     margin-bottom: 2px;
 }
+address p a{
+    font-size: 18px!important;
+    color: #bed6e4!important;
+    font-family: LatoRegular;
+}
+address p a:hover{ text-decoration: underline;}
+
 .a-none{ border: none!important;}
 
 .signature{
@@ -624,7 +636,8 @@ address p {
 
 
 .call-answer {
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     height: 364px;
     margin: 0 auto;
     padding: 35px 30px 0;
@@ -732,7 +745,7 @@ button.mfp-close:hover {
 
 .mobile .price-section .block-btn{ margin: 20px 0;}
 .mobile .title{ font-size: 24px;}
-.mobile header .title{ font-size: 20px; margin: 25px 0; } 
+.mobile header .title{ font-size: 20px; margin: 45px 0; line-height: 35px; } 
 .mobile .signature{ font-size: 16px;}
 .mobile .price-section {
     padding-top: 25px;
@@ -758,13 +771,31 @@ button.mfp-close:hover {
     padding: 0 10px;
 }
 .mobile .section-bottom .sign {
-    padding: 0 45px;
+    padding: 0 30px;
     margin-bottom: 70px;
 }
 .mobile address{ font-size: 15px;}
-.mobile .btn.btn-primary{ font-size: 19px;}
+/*.mobile .btn.btn-primary{ font-size: 19px;}*/
 
+.mobile .working .title{ margin-bottom: 30px;}
+.mobile .how-section{ padding-top: 0;}
+.mobile .price-section .title{ line-height: 35px;}
 
+.mobile .working{
+    background: white;
+    margin-top: 75px;
+}
+
+.mobile .call-answer .ul-form li {
+    padding-bottom: 15px;
+}
+
+.mobile .text-entry::-webkit-input-placeholder{ font-size: 14px; }
+.mobile .text-entry::-moz-placeholder{ font-size: 14px; }
+.mobile .text-entry:-moz-placeholder{ font-size: 14px; }
+.mobile .text-entry:-ms-input-placeholder{ font-size: 14px; }
+
+.mobile .btn.btn-primary{ font-size: 17px;}
 
 .iPad .how-section .title {
     margin-bottom: 0;
@@ -782,3 +813,60 @@ button.mfp-close:hover {
 }
 .iPad .grid{ padding: 0;}
 .iPad .grid .text-entry{ padding-left: 40px;}
+
+
+
+.agreement{
+    background: #ddf2ff;
+}
+.agreement .base{
+    font-size: 16px;
+    color: #565656;
+    text-align: justify;
+    line-height: 27px;
+    font-family: LatoRegular;    
+}
+.agreement .back a{
+    font-size: 22px;
+    color: #565656;
+    font-family: LatoRegular;    
+    text-decoration: underline;
+}
+.agreement .back{
+    margin: 15px 0;
+}
+.agreement .back a:hover{
+    text-decoration: none;
+}
+
+.firefox .adventure .item,
+.firefox .grid label, 
+.firefox .title-small,
+.firefox .not-working .item p,
+.firefox .adventure .item,
+.firefox .grid label, 
+.firefox .title-small,
+.firefox  .how-section .item p,
+.firefox .title,
+.firefox .navbar-brand i,
+.firefox .title.dark{
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 700;
+}
+.firefox .title.dark{
+    text-transform: uppercase;
+}
+
+.firefox .sign, 
+.firefox .text-entry,
+.firefox .signature, address,
+.firefox address p a,
+.firefox .btn.btn-primary,
+.firefox header .list,
+.firefox .will-call p, 
+.firefox .will-call p a{
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+}

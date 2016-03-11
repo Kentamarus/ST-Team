@@ -60,3 +60,15 @@ div{ margin: 0 auto;}
   vertical-align: middle;
 }
 /* Bootstrap modal windwow is center============*/
+
+input[placeholder]          {text-overflow:ellipsis;}
+input::-moz-placeholder     {text-overflow:ellipsis;} 
+input:-moz-placeholder      {text-overflow:ellipsis;} 
+input:-ms-input-placeholder {text-overflow:ellipsis;}   
+
+
+.mobile .btn-close, 
+.mobile button.mfp-close {    
+    right: 5px;
+    top: 5px;
+}

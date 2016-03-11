@@ -81,6 +81,7 @@
     .working .item-col:last-child{ width: 100%; }
     
     
+    
     .grid label {
         max-width: 80%;
         padding: 0 45px;
@@ -95,11 +96,10 @@
         width: 100%;
         max-width: 100%;
     }
-    .how-section .title{ margin-bottom: 20px;}
-    .how-section .item .inner {
-        margin-bottom: 15px;
-    }
-    .signature{ margin-bottom: 15px;}
+    .how-section .title{ margin-bottom: 30px;}
+    
+    .how-section .item .inner,
+    .signature{ margin-bottom: 30px;}
     
     .how-section:before{ display: none;}
     .not-working .item p{ padding: 0!important; min-height: 0; padding-bottom: 30px;}
@@ -166,6 +166,41 @@
         width: 100%;
         max-width: 310px;
     }
+        
+    .mobile.orX .image-advent {
+        background-size: 250px;
+    }
+    .mobile.orX .image-arrows:after {
+        background-size: 370px!important;
+        top: 85px;
+    }
+    .mobile.orX .adventure{ min-height: 0;}
+    .mobile.orX .adventure .item1 {
+        left: 120px;
+        top: -10px;
+    }
+    .mobile.orX .adventure .item5 {
+        left: 120px;
+        top: 185px;
+    }
+    .mobile.orX .adventure .item2 {
+        right: 90px;
+        top: -10px;
+    }
+    .mobile.orX .adventure .item4 {
+        left: 280px;
+        top: 250px;
+    }
+    .mobile.orX .adventure .item{
+        font-size: 14px;
+    }
+    .mobile.orX .adventure .item3 {
+        right: 117px;
+        top: 187px;
+    }
+    .mobile.orX .image-advent {
+        min-height: 300px;
+    }
 }
 
 @media (max-width: 500px){
@@ -216,7 +251,7 @@
         right: inherit!important;        
         text-align: center;
     }
-    .adventure{ min-height: 0; padding-bottom: 25px;}
+    .adventure{ min-height: 0; padding-bottom: 30px;}
     
     .title.dark {
         font-size: 28px;
@@ -231,11 +266,16 @@
     }
     
     .section-bottom .title-small{ padding: 0 70px;}
-    .section-bottom .title{ margin-bottom: 15px;}    
+    .section-bottom .title{ margin-bottom: 30px;}    
 }
 
 @media (max-width: 400px){
-    
+    .section-bottom .title {
+        padding-top: 30px;
+    }    
+    .how-section .item p {
+        padding: 0!important;
+    }
 }
 
 

@@ -6,3 +6,4 @@ temp
 .production
 app/style/
 .documents
+ftpClient.js
