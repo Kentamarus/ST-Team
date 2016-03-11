@@ -72,30 +72,23 @@ var Site = new function () {
                             thisForm.find(value[i].old).html(newForm);
                         }
                     }
-                
+                     
 				$.ajax({
 					type: "POST",
-					url: "main.php",
+					url: "back-end/main.php",
 					data: thisForm.serialize()
 				}).done(function() {
 					$(this).find("input").val("");
                     
-                    if (thisForm.find("input[type='submit']").data("successful")!=undefined)
-                    {
-                        thisForm.parent().animate({height:0},500,function(){
-                            $(".thanks").show();                        
-                        });                            
-                    }
-                    else
-                    {
-                        $("#myModal .call-answer").addClass("small-window");
-                        $('#myModal').modal({show: 'true'});                                                
-                    }    
-                    
-					setTimeout(function() {
-						$('.modal').modal('hide');    
-					},3000);
-					$(".call-back-form").trigger("reset");
+                    if (thisForm.find("[type='submit']").data("successful") != undefined) {
+                            thisForm.parent().animate({height: 0}, 500, function() {$(".thanks").show();});
+                        } else  $('#callForm').modal({show: 'true'}).find(".call-answer").addClass("small-window");
+
+                        setTimeout(function() {
+                            $('.modal').modal('hide');
+                            $.magnificPopup.close();
+                        }, 3000);                    
+                        $(".call-back-form").trigger("reset");
 				});
 				return false;
                 

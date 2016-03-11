@@ -561,6 +561,7 @@ header .list li{
     margin-bottom: 34px;
 }
 .grid  ul li{ padding-bottom: 22px;}
+
 .grid .text-entry{
     color:#333333;
     font-size: 16px;
@@ -572,6 +573,7 @@ header .list li{
     border-top: 3px solid #bababa;
 }
 .grid .ico{ background-position: 20px center;}
+
 
 .grid .block-btn{
     max-width: 405px;
@@ -614,7 +616,7 @@ address p {
 
 
 
-.popup-form {
+.call-answer {
     width: 400px;
     height: 364px;
     margin: 0 auto;
@@ -625,20 +627,20 @@ address p {
     position: relative
 }
 
-.popup-form .title {
+.call-answer .title {
     color: #323232;
     margin: 0;
     text-transform: none
 }
 
-.popup-form .title span {
+.call-answer .title span {
     font-size: 22px;
     color: #0166b0;
     font-family: IntroRegular;
     display: block
 }
 
-.popup-form .title i{
+.call-answer .title i{
     font-size: 22px;
     color: #333333;
     font-family: LatoRegular;
@@ -646,36 +648,60 @@ address p {
     display: block;
 }
 
-.popup-form .ul-form {
-    margin-top: 20px
+.call-answer .ul-form {
+    margin-top: 20px;
+    padding: 0;
+    margin-bottom: 0;
 }
 
-.popup-form .text-entry {
+.call-answer .text-entry {
     font-size: 16px;
     font-family: LatoLight;
     color: #333;
-    text-align: center;
+    text-align: left;
+    padding-left: 54px;
+    background-color: #ccc;
+    border-color: #bababa;
 }
 
-.popup-form .block-base-windows {
-    height: 290px
+.call-answer .block-base-windows {
+    height: 295px
 }
-.popup-form .ico {
+.call-answer .ico {
     background-position: 20px center;
 }
 
-.popup-form form {
+.call-answer form {
     padding-bottom: 3px
 }
+.call-answer .ul-form li{ padding-bottom: 28px;}
 
 .thanks {
-    padding-top: 60px
+    padding-top: 90px;
 }
 
+.call-answer.small-window{
+    height: 230px;
+    padding-top: 0;
+}
+
+.call-answer.small-window .thanks {
+    padding-top: 62px;
+}
+ 
 .thanks .title span {
-    font-size: 36px;
-    color: #446790;
-    font-family: Exo-Bold
+    font-size: 22px;
+    color: #0166b0;
+    font-family: IntroRegular;
+    display: block;
+    padding-bottom: 20px;
+}
+.thanks p {
+    text-align: center;
+    font-size: 22px;
+    color: #333;
+    font-family: LatoRegular;
+    margin: 0;
 }
 
 .btn-close,button.mfp-close {
@@ -685,9 +711,11 @@ address p {
     width: 34px!important;
     height: 34px!important;
     background: url(../images/icons/close.jpg) no-repeat;
-    font-size: 0
+    font-size: 0;
+    background-position: left bottom;
 }
 
-.btn-close:hover,button.mfp-close:hover {
-    background-position: left bottom
+.btn-close:hover,
+button.mfp-close:hover {
+    background-position: left top;
 }

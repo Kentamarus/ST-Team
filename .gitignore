@@ -5,3 +5,4 @@ tmp
 temp
 .production
 app/style/
+.documents

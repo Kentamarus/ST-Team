@@ -1,23 +1,21 @@
 
-@media (min-width: 100px){
-    .container {
-        width:980px!important;
-        position: relative;
-    }
-}
-
-
 @media (max-width: 1024px){
     
 }
 
-@media (max-width: 768px){
+@media (max-width: 769px){
     
     .adventure {
         min-height: 876px;
         background-size: 1550px;
     }
-    
+    .how-section {
+        padding-top: 70px;
+        background-position:center -40px;
+    }
+    .how-section .back:before{
+        display: none;
+    }
 }
 @media (max-width: 640px){
     

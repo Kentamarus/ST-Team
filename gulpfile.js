@@ -78,11 +78,11 @@ gulp.task('js:build', function () {
 
 gulp.task('image:build', function () {
     gulp.src(path.create.img) //Выберем наши картинки
-        .pipe(imagemin({ //Сожмем их
+        .pipe(imagemin({ 
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()],
-            interlaced: true
+            interlaced: true //Сожмем их
         }))
         .pipe(gulp.dest(path.production.img)) //И бросим в production       
 });
@@ -124,8 +124,7 @@ gulp.task('fonts:build', function () {
 });
 
 gulp.task('build', [
-    'html:build',     
-    'image:build',
+    'html:build',         
     'uploads:build',
     'js:build',
     'fonts:build',    
@@ -166,6 +165,6 @@ gulp.task('watch', function(){
     });   
 });
 
-gulp.task('default', ['build', 'webserver', 'watch', 'css:build']);
+gulp.task('default', ['build','watch', 'css:build', 'image:build', 'webserver']);
     
 console.log("Gulpfile is updated");
