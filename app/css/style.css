@@ -232,6 +232,10 @@ header .list li{
     display: block;
 }
 
+.working{
+    min-height: 347px;
+}
+
 .working .image{
     position: relative;
     display: block;
@@ -245,9 +249,10 @@ header .list li{
 }
 
 .how-section{
-    padding-top: 130px;
+    padding-top: 40px;
     position: relative;
     min-height: 1040px;
+    margin-top: -14px;
     background:#ddf2ff url('../images/back-section.png') no-repeat center top;
 }
 .how-section:before{
@@ -494,7 +499,7 @@ header .list li{
 
 /*adventure*/
 .adventure{
-    min-height: 876px;
+    min-height: 831px;
     background:url('../images/back-section2.jpg') no-repeat center top; 
     padding: 45px 0 0 0;
     
@@ -504,12 +509,13 @@ header .list li{
     margin: 0;
 }
 .image-arrows{position: relative;}
+
 .image-arrows:after{
     background:url('../images/back-arrows1.png') no-repeat center top;     
     content: "";
     position: absolute;
     left: 0;
-    top: 191px;
+    top: 185px; 
     width: 100%;
     height: 831px;
 }
