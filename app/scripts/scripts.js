@@ -73,29 +73,16 @@ var Site = new function () {
                             var newForm = thisForm.find(value[i].old).attr("id", value[i].id).attr("name", value[i].id);
                             thisForm.find(value[i].old).html(newForm);
                         }
-                    }
-                     
+                    }                            
+                
 				$.ajax({
 					type: "POST",
 					url: "back-end/main.php",
 					data: thisForm.serialize()
 				}).done(function() {
 					$(this).find("input").val("");
-                    
-                    if (thisForm.attr("id") == "mainForm")
-                        {
-                            location.href = "thanks.html";
-                            return;
-                        }                    
-                    if (thisForm.find("[type='submit']").data("successful") != undefined) {
-                            thisForm.parent().animate({height: 0}, 500, function() {$(".thanks").show();});
-                        } else  $('#callForm').modal({show: 'true'}).find(".call-answer").addClass("small-window");
-
-                        setTimeout(function() {
-                            $('.modal').modal('hide');
-                            $.magnificPopup.close();
-                        }, 3000);                    
-                        $(".call-back-form").trigger("reset");
+                    $(".call-back-form").trigger("reset");                    
+                    location.href = "thanks.html";
 				});
 				return false;                                   
 			},
