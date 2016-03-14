@@ -1,13 +1,15 @@
-
-$(function(){    
-    Browser.init();
-    Site.Init();     
-    
-//    $(window).bind("resize", function(){ location.reload(); });
-});
-
 var Site = new function () {
+    this.parseUrl = function(){
+        switch (location.hash){
+            case "#callAnswer": { 
+                $.magnificPopup.open({items: {src: '#callAnswer'},type: 'inline'}, 0);
+                break;
+               }                                                   
+            default: break;
+        }
+    },
     this.Init = function(){
+        this.parseUrl();
         
         $(".navbar-toggle").bind("click", function(e){
             e.preventDefault();
@@ -80,6 +82,11 @@ var Site = new function () {
 				}).done(function() {
 					$(this).find("input").val("");
                     
+                    if (thisForm.attr("id") == "mainForm")
+                        {
+                            location.href = "thanks.html";
+                            return;
+                        }                    
                     if (thisForm.find("[type='submit']").data("successful") != undefined) {
                             thisForm.parent().animate({height: 0}, 500, function() {$(".thanks").show();});
                         } else  $('#callForm').modal({show: 'true'}).find(".call-answer").addClass("small-window");
@@ -90,10 +97,7 @@ var Site = new function () {
                         }, 3000);                    
                         $(".call-back-form").trigger("reset");
 				});
-				return false;
-                
-                
-
+				return false;                                   
 			},
 			success: function() {
 

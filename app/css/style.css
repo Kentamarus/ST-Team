@@ -21,6 +21,10 @@ body > .container-fluid.main{
     background-position: center top;
 }
 
+.page-thank{
+    background-image: url('../images/thankyou.jpg')!important;
+}
+
 
 /*nav*/
 nav{
@@ -878,3 +882,56 @@ button.mfp-close:hover {
     font-style: normal;
     font-weight: 400;
 }
+
+section.thanks{ padding: 0;}
+
+
+.page-thank .block-text .title{
+    font-family: IntroRegular;
+}
+
+.page-thank .block-text p{
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    font-size: 28px;
+    text-align: center;
+}
+
+.page-thank .block-text{
+    min-height: 280px;
+    margin-top: 108px;
+}
+
+
+.ico-arrow-left{
+    background-image: url('../images/icons/arrow-left.png');    
+}
+
+.page-thank a.btn{
+    text-align: left;
+    padding: 0px;    
+}
+
+.page-thank a.btn i.ico-arrow-left{
+    display: block;
+    float: left;
+    width: 18px;
+    height: 48px;
+    line-height: 48px;
+    margin: 0 32px 0 40px;
+    background-position:left center;
+}
+
+.page-thank footer{ margin-top: 180px;}
+
+.mobile .page-thank .block-text {
+    min-height: 150px;
+    padding-top: 0px;
+    margin-top: 30px;
+}
+.mobile  .block-text p{ font-size: 18px;}
+.mobile .page-thank header .title{ margin: 15px 0;}
+.mobile .page-thank header{ min-height: 0; }
+.mobile .page-thank footer { margin-top: 100px;}

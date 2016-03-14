@@ -44,10 +44,10 @@
                                     <input type="hidden" class="subject" name="subject">
                                     <ul class="ul-form">
                                         <li>
-                                            <input type="text" class="people text-entry ico ico-arrow" required="" name="firstName" placeholder="Введите имя">
+                                            <input type="text" class="people text-entry ico ico-arrow" required="" name="firstName" placeholder="Ниша бизнеса">
                                         </li>
                                         <li>          							
-                                            <input type="tel" class="phone text-entry ico ico-arrow" required="" name="phone" placeholder="Ваш номер телефона">
+                                            <input type="tel" class="phone text-entry ico ico-arrow" required="" name="phone" placeholder="Телефон">
                                         </li>
                                     </ul>
                                     <button type="submit" data-successful class="btn btn-primary">Отправить заявку</button>    
@@ -245,7 +245,7 @@
                 <fieldset id="formMain" class="grid">
                     <label class="title-line">УЗНАЙТЕ СТОИМОСТЬ КЛИЕНТА В ВАШЕЙ НИШЕ!</label>
 <!--                  .clearfix>.col-sm-6.item-col$*2>ul>li*3>input.[type="text" placeholder=""].text-entry.ico.ico-arrow-->
-                  <form class="call-back-form">
+                  <form class="call-back-form" id="mainForm">
                        <div class="clearfix">
                            <div class="col-sm-6 item-col1">
                                <ul>
@@ -305,5 +305,11 @@
         <script src="libraries/jquery.validate.min.js"></script>        
         
         <script src="scripts/scripts.js"></script>                    
+        <script>
+        $(function(){    
+            Browser.init();
+            Site.Init();     
+        })
+        </script>
 </body>
 </html>
